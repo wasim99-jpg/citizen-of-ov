@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		
+        <meta charset="utf-8">
+        <title>deploy dapp</title>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js" integrity="sha512-jRzb6jM5wynT5UHyMW2+SD+yLsYPEU5uftImpzOcVTdu1J7VsynVmiuFTsitsoL5PJVQi+OtWbrpWq/I+kkF4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Citizens Of OV</title>
+    <meta name="twitter:description" content="Citizens Of OV is a collection of 5555 is a unique 3D voxels generated characters in the blockchain. Using ERC-721 type of token so that each one of it is never be the same as others. Each of Citizens were create by various 101 traits and were generated uniquely. Be part of our journey and grants access to exclusive benefits like contest, giveaways, lucky draw and more.">
+    <meta name="twitter:image" content="assets/img/ov-logo.png">
+    <meta name="description" content="Citizens Of OV is a collection of 5555 is a unique 3D voxels generated characters in the blockchain. Using ERC-721 type of token so that each one of it is never be the same as others. Each of Citizens were create by various 101 traits and were generated uniquely. Be part of our journey and grants access to exclusive benefits like contest, giveaways, lucky draw and more.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Citizens Of OV">
+    <link rel="icon" type="image/png" sizes="377x376" href="assets/img/ov-logo.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>   
+    </head>
+
+<body style="background: linear-gradient(-107deg, rgb(0,0,0), rgb(17,17,17) 100%);">
+    <nav class="navbar navbar-light navbar-expand-md" style="height: 234.8594px;">
+        <div class="container"><a class="navbar-brand" href="#" style="color: rgba(255,255,255,0.9);"><img src="assets/img/ov-logo.png" style="width: 100px;"></a>
+            <ul class="navbar-nav">
+                <!--connect button-->
+                <li class="nav-item"><a class="nav-link" style="color: rgb(255,255,255);"><button class="btn btn-primary" type="button" style="background: linear-gradient(-123deg, var(--bs-indigo), var(--bs-pink)), var(--bs-indigo);width: 150.5781px;height: 58px;font-size: 18px;border-radius: 23px;border-width: 0px;font-family: nexa;color: rgb(255,255,255);font-weight: bold;" onClick="startApp()" ><span id ="wallet-address">Connect</span></button></a></li>
+            </ul>
+        </div>
+    </nav>
+    <section style="height: 617px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center d-xxl-flex justify-content-xxl-center align-items-xxl-center">
+                    <h1 style="color: #ffffff;font-size: 64px;"><span id="soldout">PUBLIC MINT</span></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-3 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 12px;">
+                    <!--mint count-->
+                    <p style="color: rgb(255,255,255);padding-right: 12px;padding-top: 13px;font-size: 30PX;"><span id = "mint-count">connect metamask</span></p>
+                    <!--get some space-->
+                    <p style="color: rgb(255,255,255);padding-right: 12px;padding-top: 13px;font-size: 25PX;"></p>
+                    <p style="color: rgb(255,255,255);padding-right: 12px;padding-top: 13px;font-size: 30PX;"><span id = "dash" ></span></p>
+                    <p style="color: rgb(255,255,255);padding-left: 12px;padding-top: 13px;font-size: 30PX;"><span id = "maxSupply"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container align-self-center flex-md-grow-0" style="color: rgb(33, 37, 41);background: linear-gradient(-117deg, var(--bs-indigo), var(--bs-pink)), rgba(0,0,0,0.19);border-radius: 27px;border-color: rgb(33, 37, 41);border-top-color: rgb(33,;border-right-color: 37,;border-bottom-color: 41);border-left-color: 37,;max-width: 720px;box-shadow: 17px 17px 20px 3px rgba(102,16,242,0.45), -17px -17px 20px 3px rgba(214,51,132,0.33);">
+            <div class="row justify-content-center align-items-center flex-md-grow-0 justify-content-md-center justify-content-xxl-center" style="background: rgba(255,255,255,0);border-radius: 25px;border-color: rgba(255,255,255,0);padding-top: 12px;">
+                <!--minimum-->
+                <div class="col-3 col-sm-1 text-center d-flex d-xxl-flex justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 12px;margin-left: 0px;width: 95px;"><button id="min" class="btn btn-primary d-xxl-flex" type="button" style="background: rgba(13,110,253,0);font-size: 34px;width: 90.2656px;padding-top: 6px;border-color: rgba(255,255,255,0);" >1</button></div>
+                <!--decrement-->
+                <div class="col-1 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 12px;"><button id="dec" class="btn btn-primary d-xxl-flex" type="button" style="background: rgba(13,110,253,0);font-size: 34px;width: 45.2656px;padding-top: 6px;border-color: rgba(255,255,255,0);" >-</button></div>
+                <div class="col-1 col-sm-1 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 0px;">
+                    <!--amount-->
+                    <p style="font-size: 50px;color: rgb(255,255,255);"><span id="amount">1</span></p>
+                </div>
+                <!--increment-->
+                <div class="col-1 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 12px;"><button id="inc" class="btn btn-primary d-xxl-flex" type="button" style="background: rgba(13,110,253,0);font-size: 34px;width: 45.2656px;padding-top: 6px;border-color: rgba(255,255,255,0);">+</button></div>
+                <!--maximum-->
+                <div class="col-3 col-sm-1 text-center d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="padding-top: 12px;padding-bottom: 12px;width: 108px;"><button id="max" class="btn btn-primary d-xxl-flex" type="button" style="background: rgba(13,110,253,0);font-size: 34px;width: 97.2656px;padding-top: 6px;border-color: rgba(255,255,255,0);" >10</button></div>
+            </div>
+            <div class="row g-0 d-flex align-items-center flex-md-grow-0 align-items-xxl-center" style="padding-bottom: 12px;padding-top: 12px;">
+                <!--mint-->
+                <div class="col-8 offset-2 text-center d-flex d-xxl-flex justify-content-center align-items-center align-content-center align-self-center justify-content-xxl-center align-items-xxl-center" style="text-align: center;padding-bottom: 12px;padding-top: 12px;"><button id="Mint" class="btn btn-primary text-center d-flex d-xxl-flex justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" type="button" style="width: 271.5px;height: 67px;background: var(--bs-body-bg);font-size: 24px;color: var(--bs-pink);border-radius: 18px;font-weight: bold;border-width: 0px;"><br>MINT<br><br></button></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!--status-->
+                    <p class="text-center" style="color: rgb(255,255,255);"><span id="status">happy minting 😊</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        var account = null;
+        var contract = null;
+        const ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address[]","name":"_users","type":"address[]"}],"name":"AddwhitelistUsers","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"RemovewhitelistUsers","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintAmount","type":"uint256"}],"name":"ReservedTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_state","type":"bool"}],"name":"SaleState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"SalesState","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"WLCost","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"WLmaxWalletAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"addressMintedBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseExtension","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"cost","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"initialURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"isWhitelisted","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxMintAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintAmount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintAmount","type":"uint256"}],"name":"mintWhitelisted","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"onlyWhitelisted","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"revealed","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_newBaseExtension","type":"string"}],"name":"setBaseExtension","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_newBaseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newCost","type":"uint256"}],"name":"setCost","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_initURI","type":"string"}],"name":"setInitialURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_state","type":"bool"}],"name":"setOnlyWhitelisted","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_state","type":"bool"}],"name":"setRevealed","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newCost","type":"uint256"}],"name":"setWLCost","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newmaxMintAmount","type":"uint256"}],"name":"setmaxMintAmount","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_owner","type":"address"}],"name":"walletOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"payable","type":"function"}];
+        const address = "0x86c58be695c664b5c4e587fc39842764fe1b0dbb";
+    
+    
+        
+        
+    const startApp = async () => {
+        if (typeof window.ethereum == 'undefined') {
+            alert('MetaMask is not installed!');
+        }
+
+        if(window.ethereum) {
+            document.getElementById('dash').textContent =" / ";
+
+            //***arithmetic function***//
+            var amount = 10;
+            document.getElementById('min').onclick =  () => {
+            amount = 1;
+            if(amount < 1){
+                amount = 1;
+                
+            }
+            document.getElementById('amount').textContent = amount;
+            
+            }
+
+            document.getElementById('max').onclick =  () => {
+            amount = 10;
+            if(amount > 10){
+                amount = 10;
+            }
+            document.getElementById('amount').textContent = amount;
+            
+            }
+
+            document.getElementById('inc').onclick =  () => {
+            amount = amount + 1;
+            if(amount > 10){
+                amount = 10;
+            }
+            document.getElementById('amount').textContent = amount;
+            
+            }
+
+            document.getElementById('dec').onclick =  () => {
+            amount = amount - 1;
+            if(amount < 1){
+                amount = 1;
+            }
+            document.getElementById('amount').textContent = amount;
+            
+            }
+            //***arithmetic function***//
+
+            
+
+            //**get account area**//
+            connectToBSC();
+            if (window.ethereum.chainId == "0x38") {
+                await window.ethereum.send('eth_requestAccounts');
+                window.web3 = new Web3(window.ethereum);
+            
+                var accounts = await web3.eth.getAccounts();
+                account = accounts [0];
+                let firstSubAccount = account.substring(0,6)
+                let SecondSubAccount = account.substring(38,42)
+                document.getElementById('wallet-address').textContent =firstSubAccount+"..."+SecondSubAccount;
+                
+            }
+            //**get account area**//
+
+
+            //read everything on smart contract
+            contract = new web3.eth.Contract(ABI, address);
+
+            //max supply (read)
+            let supply = await contract.methods.maxSupply().call();
+            document.getElementById('maxSupply').textContent =supply;
+
+            //cost (read)
+            let Cost = await contract.methods.cost().call();
+            //conver to ether rather than using wei value
+            let costEther = await web3.utils.fromWei(Cost, 'ether');
+            let dCostEther = costEther.substring(0, 5);
+            
+            
+            
+
+            //minted (read)
+            let mintCount = await contract.methods.totalSupply().call();
+            document.getElementById('mint-count').textContent =mintCount+" ";
+
+            
+
+            //ownerOf (read)
+            
+
+
+
+            document.getElementById('status').textContent = dCostEther+" BNB for 1 Citizens Of OV";
+
+
+
+            //minting(sending ether,minting)
+            document.getElementById('Mint').onclick = () => {
+            connectToBSC();
+            if (window.ethereum.chainId == "0x38") {
+            //get value from input
+            //var amount=parseInt(document.getElementById('Amount').value);
+            document.getElementById('status').textContent = "interacting with the blockchain, please wait a while....";
+            document.getElementById('amount').textContent = amount;
+            let response = contract.methods.mint(amount).send({ from : account ,value : Cost*amount})
+            .on("receipt", function(receipt) {
+            document.getElementById('status').textContent = "Successfully minted " + amount + " COV! You can see it through TofuNFT and other BSC marketplaces";
+            // Transaction was accepted into the blockchain, let's redraw the UI
+            })
+            .on("error", function(error) {
+            document.getElementById('status').textContent = "something went wrong,if transaction failed please contact our admin in Discord or Twitter";
+            $("status").text(error);
+            });
+            }
+            //document.getElementById('status').textContent = "You Successfully minted "+amount+" COV, you can see it through TofuNFT marketplaces";
+            }
+            
+            //check if sold out or not
+            if(mintCount == supply) {
+            document.getElementById('soldout').textContent =" sold Out! ";
+            }
+
+            
+
+            //reserved tokens(prompt user,write)
+            document.getElementById('reservedTokens').onclick =  () => {
+            contract.methods.ReservedTokens(1).send({ from : account });
+            }				
+
+            //any method down here
+            
+        }
+        
+
+        function connectToBSC() {
+        if (typeof window.ethereum == 'undefined') {
+            alert('MetaMask is not installed!');
+        } else {
+            
+
+            const chain = {
+                chainId: "0x38",
+                chainName: "Binance Smart Chain Mainnet",
+                nativeCurrency: {
+                    name: "Binance Chain Native Token",
+                    symbol: "BNB",
+                    decimals: 18,
+                },
+                rpcUrls: ["https://bsc-dataseed1.binance.org", "https://bsc-dataseed2.binance.org", "https://bsc-dataseed3.binance.org", "https://bsc-dataseed4.binance.org", "https://bsc-dataseed1.defibit.io", "https://bsc-dataseed2.defibit.io", "https://bsc-dataseed3.defibit.io", "https://bsc-dataseed4.defibit.io", "https://bsc-dataseed1.ninicoin.io", "https://bsc-dataseed2.ninicoin.io", "https://bsc-dataseed3.ninicoin.io", "https://bsc-dataseed4.ninicoin.io", "wss://bsc-ws-node.nariox.org"],
+                blockExplorerUrls: ["https://www.bscscan.com/"],
+                iconUrls: [
+                    "https://bin.bnbstatic.com/image/admin_mgs_image_upload/20201110/550eda20-1b9a-4bc7-9a65-e4a329e8bb57.png"
+                ]
+            };
+            window.ethereum.request({
+                method: "wallet_addEthereumChain",
+                params: [chain],
+            }).catch((error) => {
+                console.log(error);
+                alert("An error has occurred. Please make sure the metamask is ready to go. See error in log");
+            });
+        }
+        }
+
+    }
+    
+            
+
+    </script>
+</body>
+
+</html>
